@@ -1,4 +1,4 @@
-/* ================= ROOT VARIABLES ================= */
+/* ================= ROOT ================= */
 :root {
     --primary-color: #00e5a8;
     --background-color: #020617;
@@ -6,7 +6,7 @@
     --text-color: #e5e7eb;
     --muted-text: #9ca3af;
     --border-color: #00e5a840;
-    --glow: 0 0 12px rgba(0, 229, 168, 0.15);
+    --glow: 0 0 10px rgba(0, 229, 168, 0.12);
 }
 
 /* ================= RESET ================= */
@@ -35,7 +35,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(2, 6, 23, 0.9);
+    background: rgba(2, 6, 23, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -49,7 +49,7 @@ body {
 }
 
 .logo img {
-    height: 55px;
+    height: 52px;
     border-radius: 50%;
     box-shadow: var(--glow);
 }
@@ -97,18 +97,18 @@ body {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 780px;
 }
 
 .hero h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     color: var(--primary-color);
     text-shadow: var(--glow);
 }
 
 .hero h2 {
-    font-size: 1.8rem;
-    margin: 1rem 0;
+    font-size: 1.7rem;
+    margin: 0.8rem 0;
 }
 
 .hero p {
@@ -120,12 +120,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
 }
 
 .cta-primary,
 .cta-secondary {
-    padding: 0.9rem 2rem;
+    padding: 0.85rem 2rem;
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
@@ -150,30 +150,42 @@ body {
 
 /* ================= SECTIONS ================= */
 section {
-    padding: 110px 0;
+    padding: 70px 0;
+}
+
+/* Divider line between sections */
+section:not(:first-of-type)::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    margin: 0 auto 45px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary-color),
+        transparent
+    );
+    opacity: 0.6;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.4rem;
-    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
     color: var(--primary-color);
 }
 
-/* ================= ABOUT (FIXED) ================= */
-.about {
-    background: linear-gradient(180deg, #020617, #000);
-}
-
+/* ================= ABOUT ================= */
 .about .container {
-    max-width: 900px;
+    max-width: 850px;
     text-align: center;
 }
 
 .about p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--muted-text);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Skills */
@@ -182,26 +194,24 @@ section {
     margin-bottom: 1.2rem;
 }
 
+/* Skill chips – FIXED */
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.9rem;
+    gap: 0.6rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .skill-tags span {
     background: rgba(0, 229, 168, 0.08);
     border: 1px solid var(--border-color);
-    padding: 0.55rem 1.1rem;
-    border-radius: 20px;
+    padding: 0.45rem 0.9rem;
+    border-radius: 18px;
     color: var(--primary-color);
-    font-size: 0.9rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.skill-tags span:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--glow);
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 /* ================= EXPERIENCE ================= */
@@ -211,14 +221,14 @@ section {
 }
 
 .timeline-item {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.2rem;
     border-left: 2px solid var(--primary-color);
-    padding-left: 2rem;
+    padding-left: 1.8rem;
 }
 
 .timeline-content {
     background: #020617;
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: var(--glow);
@@ -226,10 +236,6 @@ section {
 
 .timeline-content h3 {
     color: var(--primary-color);
-}
-
-.timeline-content h4 {
-    margin-bottom: 0.5rem;
 }
 
 .date {
@@ -248,12 +254,12 @@ section {
     background: #020617;
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 2rem;
+    padding: 1.8rem;
     transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     box-shadow: var(--glow);
 }
 
@@ -264,15 +270,15 @@ section {
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.5rem;
     margin-top: 1rem;
 }
 
 .tech-stack span {
     background: rgba(0, 229, 168, 0.1);
     color: var(--primary-color);
-    padding: 0.4rem 0.9rem;
-    border-radius: 15px;
+    padding: 0.4rem 0.85rem;
+    border-radius: 14px;
     font-size: 0.85rem;
 }
 
@@ -282,14 +288,14 @@ section {
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.4rem;
 }
 
 .contact-item {
     background: #020617;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.3rem;
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -315,11 +321,11 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
     }
 
     .hero h2 {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .cta-buttons {
