@@ -66,10 +66,12 @@ window.addEventListener('load', () => {
     }, 500);
     
     setTimeout(() => {
-        typeWriter(heroSubtitle, 'Cybersecurity & Software Developer');
+        typeWriter(heroSubtitle,  "Entry-Level SOC Analyst | Security Operations",
+  "SIEM Monitoring | Log Analysis | Incident Response");
     }, 2000);
     
     setTimeout(() => {
         typeWriter(heroText, 'Passionate about ethical hacking, automation, and digital security');
     }, 3500);
+
 }); 
